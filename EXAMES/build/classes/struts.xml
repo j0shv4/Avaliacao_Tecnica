@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+	<package name="listaExames" extends="struts-default">
+		<action name="LoginAction" class="Acao.LoginAction">
+			<result name="success" type="redirect">/carregarExames</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="carregarExames" class="Acao.CarregarExames">
+			<result name="success">/listaExames.jsp</result>
+			<result name="erro">/erro.jsp</result>
+		</action>
+		<action name="novoExame" class="Acao.NovoExame">
+			<result name="success" type="redirect">/carregarExames</result>
+			<result name="erro">novoExame.jsp</result>
+		</action>
+		<action name="recuperarDados" class="Acao.RecuperarDados">
+			<result name="success">/atualizarExame.jsp</result>
+			<result name="erro">/atualizarExame.jsp</result>
+		</action>
+		<action name="atualizarExame" class="Acao.AtualizarExame">
+			<result name="success" type="redirect">carregarExames </result>
+			<result name="error">/atualizarExame.jsp</result>
+		</action>
+		<action name="excluirExame" class="Acao.DeletarExame">
+			<result name="success" type="redirect">carregarExames </result>
+			<result name="error">/erro.jsp</result>
+		</action>
+	</package>
+</struts>
